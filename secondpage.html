@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         <p class="text-center" style="font-weight: bold; color: forestgreen; padding-top: 25px">{{message}}</p>
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+
+<div class="row">
+    <div class="col-3">
+        &nbsp;
+    </div>
+
+    <div class="col-4">
+        {% for i in range(20,30) %}
+            {% if i % 2 == 0 %}
+                <p style = "color: white">{{all_albums[i]}}</p>
+            {% else %}
+                <p style = "color: forestgreen">{{all_albums[i]}}</p>
+            {% endif %}
+        {% endfor %}
+
+        <a href="/recommended" class="btn btn-outline-success">Prev</a>
+    </div>
+
+    <div>
+        {% for i in range(30,40) %}
+            {% if i % 2 == 1 %}
+                <p style = "color: white">{{all_albums[i]}}</p>
+            {% else %}
+                <p style = "color: forestgreen">{{all_albums[i]}}</p>
+            {% endif %}
+        {% endfor %}
+
+        <a href="/recommended/page=3" class="btn btn-outline-success">Next</a>
+    </div>
+
+</div>
+
+{% endblock %}

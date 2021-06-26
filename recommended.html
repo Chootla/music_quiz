@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<p class="text-center" style="font-weight: bold; color: forestgreen; padding-top: 25px">Top 50 best indie albums according to pitchfork</p>
+
+<div class="row">
+    <div class="col-3">
+        &nbsp;
+    </div>
+
+    <div class="col-4">
+        {% for i in range(0,10) %}
+            {% if i % 2 == 0 %}
+                <p style = "color: white">{{all_albums[i]}}</p>
+            {% else %}
+                <p style = "color: forestgreen">{{all_albums[i]}}</p>
+            {% endif %}
+        {% endfor %}
+        <a href="/" class="btn btn-outline-success">Home</a>
+    </div>
+
+    <div>
+        {% for i in range(10,20) %}
+            {% if i % 2 == 1 %}
+                <p style = "color: white">{{all_albums[i]}}</p>
+            {% else %}
+                <p style = "color: forestgreen">{{all_albums[i]}}</p>
+            {% endif %}
+        {% endfor %}
+
+        <a href="/recommended/page=2" class="btn btn-outline-success">Next</a>
+    </div>
+
+</div>
+
+{% endblock %}

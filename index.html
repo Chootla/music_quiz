@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class = "row" style="padding-top: 100px">
+        <div class = "col-5">
+            &nbsp;
+        </div>
+        <div class="col-7">
+            <div class="row justify-content-left">
+                <a class="btn btn-outline-success" href="/search" role="button">Top 10 songs</a>
+
+                &nbsp;
+
+                <a class="btn btn-outline-success" href="/recommended" role="button" style="margin-left: 120px">Recommended</a>
+            </div>
+        </div>
+    </div>
+
+    <div class = "row" style="padding-top: 50px">
+        <div class = "col-5">
+            &nbsp;
+        </div>
+        <div class="col-7">
+            <div class="row justify-content-left">
+                <a class="btn btn-outline-success" href="/about" role="button" style="margin-left: 135px">About Site</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

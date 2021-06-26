@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         <p class="text-center" style="font-weight: bold; color: forestgreen; padding-top: 50px">{{message}}</p>
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+
+
+
+<div class="row">
+    <div class="col-3">
+        &nbsp;
+    </div>
+
+    <div class="col-4">
+        {% for i in range(0,5) %}
+            {% if i % 2 == 0 %}
+                <p style = "color: white; margin-top: 30px">{{results[i][0]}} &nbsp; Released  on: &nbsp; {{results[i][1]}}</p>
+            {% else %}
+                <p style = "color: forestgreen; margin-top: 30px">{{results[i][0]}} &nbsp; Released  on: &nbsp; {{results[i][1]}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div>
+        {% for i in range(5,10) %}
+            {% if i % 2 == 1 %}
+                <p style = "color: white; margin-top: 30px">{{results[i][0]}} &nbsp; Released  on: &nbsp; {{results[i][1]}}</p>
+            {% else %}
+                <p style = "color: forestgreen; margin-top: 30px">{{results[i][0]}} &nbsp; Released  on: &nbsp; {{results[i][1]}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <a href="/" class="btn btn-outline-success">Back To Home Page</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

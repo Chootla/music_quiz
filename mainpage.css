@@ -1,0 +1,26 @@
+a {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+a:hover{
+    background-color: white !important;
+    color: rgb(36, 207, 95) !important;
+}
+
+.inputname {
+    width: 400px;
+    border: 1px solid forestgreen;
+    color: forestgreen;
+    background-color: rgb(36, 207, 95);
+}
+
+.inputname:focus{
+    background-color: #28a745;
+    color: white;
+}
+
+::placeholder{
+    color: #28a745;
+    padding-left: 5px;
+}

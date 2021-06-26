@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<p class="fw-bold" style="text-align: center; font-weight: bold; color: white; padding-top: 70px; padding-left: 10px"> This is a random music related site.
+    <br>In this site I use Spotify's own API, where you can enter an artists or a bands name and it will give you their top 10 most listened songs on spotify.
+    <br> Also I use one of pitchfork top 50 albums specifically indie albums, which i would recommend if you like that kind of music.</p>
+
+<div class = "row">
+    <div class="col-5">
+        &nbsp;
+    </div>
+
+    <div class="col-6" style="margin-left: 110px">
+        <a class="btn btn-outline-success" href="/" role="button" style="">Back</a>
+    </div>
+</div>
+
+{% endblock %}

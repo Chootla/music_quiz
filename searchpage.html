@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class = "row">
+    <div class = "col-5">
+        &nbsp;
+    </div>
+    <form action = "http://127.0.0.1:5000/search" method = "post" style="padding-top: 50px">
+         <p style="font-weight: bold; color: forestgreen">Enter Artist's Name:</p>
+         <p><input class = "inputname" type = "text" name = "artist" placeholder="Enter Here"/></p>
+         <p><input type = "submit" value = "submit" class="btn btn-outline-success"/></p>
+      </form>
+</div>
+
+{% endblock %}
